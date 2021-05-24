@@ -1,8 +1,22 @@
 {:duct.profile/base
- {:duct.core/project-ns mads}
+ {:duct.core/project-ns
+  mads
 
- :duct.profile/dev   #duct/include "dev"
- :duct.profile/local #duct/include "local"
- :duct.profile/prod  {}
+  :mads/server
+  {:port    3001
+   :handler #ig/ref :mads/handler}
+
+  :mads/db
+  {:dbtype   "postgres"
+   :dbname   "ad-demo"
+   :user     "pg-user"
+   :password "pg-pass"}
+
+  :mads/handler
+  {:db #ig/ref :mads/db}}
+
+ :duct.profile/dev    #duct/include "dev"
+ :duct.profile/local  #duct/include "local"
+ :duct.profile/prod   {}
 
  :duct.module/logging {}}

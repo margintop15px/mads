@@ -13,9 +13,10 @@
   [:header {:class "py-4 px-4 mb-4"}
    [:div {:class "container-fluid d-grid gap-3 align-items-center"}
     [:div {:class "d-flex align-items-center"}
-     [:form.w-100
-      [:input.form-control
-       {:aria-label  "Search",
+     [:form {:class "w-100"}
+      [:input
+       {:class       "form-control"
+        :aria-label  "Search",
         :placeholder "Search...",
         :type        "search"}]]]]])
 
@@ -38,7 +39,8 @@
      [:div.card-body
       [:h5.card-title "Card title"]
       [:p.card-text
-       "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."]
+       "This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer."]
       [:p.card-text
        [:small.text-muted "Published 3 mins ago"]]]]]])
 

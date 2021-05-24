@@ -28,7 +28,14 @@
 
    :service/app       {:main           ^:skip-aot mads.main
                        :source-paths   ["services/app"]
-                       :resource-paths ["resources/app" "dev/resources/app"]}
+                       :resource-paths ["resources/app" "dev/resources/app"]
+                       :dependencies   [[http-kit "2.5.0"]
+                                        [javax.servlet/servlet-api "2.5"]
+                                        [metosin/reitit "0.5.6"]
+                                        [com.github.seancorfield/next.jdbc "1.1.646"]
+                                        [org.postgresql/postgresql "42.2.5"]
+                                        [honeysql "1.0.461"]
+                                        [nilenso/honeysql-postgres "0.4.112"]]}
 
    :service/moderator {:main           ^:skip-aot mads.main
                        :source-paths   ["services/moderator"]
